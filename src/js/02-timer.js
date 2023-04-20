@@ -86,6 +86,8 @@ const secondsEl = document.querySelector('[data-seconds]');
 const dateThis = new Date();
 
 function start() {
+  buttonEl.disabled = true;
+  dateTime.disabled = true;
   console.log(dateThis.getTime());
   console.log(dataInput);
   let ms = dataInput - dateThis.getTime();
@@ -100,6 +102,7 @@ function start() {
     ms -= 1000;
     if (ms <= 0) {
       clearTimeout(timerEl);
+      dateTime.disabled = false;
     }
   }, 1000);
 }
