@@ -92,7 +92,7 @@ function start() {
   console.log(dataInput);
   let ms = dataInput - dateThis.getTime();
   // таймер відліку
-  timerEl = setInterval(() => {
+  const timerEl = setInterval(() => {
     convertMs(ms);
     const { days, hours, minutes, seconds } = convertMs(ms);
     daysEl.textContent = addLeadingZero(days);
